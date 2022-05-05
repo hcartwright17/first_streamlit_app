@@ -42,4 +42,4 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_row = my_cur.fetchall()
 streamlit.text("The fruit load list contains:")
 streamlit.text(my_data_row)
-use warehouse = pc-rivery-wh
+use warehouse = pc_rivery_wh
