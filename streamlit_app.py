@@ -27,7 +27,7 @@ fruit_choice = streamlit.text_input('What fruit would you like information about
 streamlit.write('The user entered', fruit_choice)
 
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 
 
 # take the json version of the response and normalize it
@@ -44,8 +44,3 @@ my_data_row = my_cur.fetchall()
 streamlit.text("The fruit load list contains:")
 streamlit.text(my_data_row)
 
-#Allow the end user to add a fruit to the list
-add_my_fruit = streamlit.text_input('What fruit would you like to add?', 'jackfruit')
-streamlit.write('Thanks for adding', fruit_choice)
-
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
